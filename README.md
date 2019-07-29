@@ -1,34 +1,52 @@
 # vue-slide-menu
 
-## Project setup
+## Install
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+npm install vue-slide-menu --save
 ```
 
-### Compiles and minifies for production
+## Importing Component
 ```
-npm run build
+<script>
+import VueSlideMenu from 'vue-slide-menu';
+
+export default {
+    components: {
+        'vue-slide-menu': VueSlideMenu,
+    },
+}
+</script>
 ```
 
-### Run your tests
+## Importing Styles
 ```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+<style>
+@import '~vue-slide-menu/dist/vue-slide-menu.css';
+</style>
 ```
 
-### Run your unit tests
+## Usage
 ```
-npm run test:unit
-```
+<vue-slide-menu title="MenuTitle" :open.sync="myMenuOpenVar" :menu="myMenuVar" />
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+// ...
+
+data() {
+    return {
+        myMenuOpenVar: false,
+        myMenuVar: [
+            {
+                name: 'Main Menu Entry',
+                value: [
+                    {
+                        name: 'SubHeading',
+                        value: [
+                            { name: 'My Link', value: '/index.html' },
+                        ],
+                    },
+                ],
+            }
+        ]
+    };
+}
+```

@@ -1,5 +1,5 @@
 <template>
-  <div :class="menuClass">
+  <div :style="'z-index: ' + zIndex" :class="menuClass">
     <div class="vue-slide-menu">
       <div class="header-bar" :style="headerStyle">
         <a class="menu-header" :style="headerStyle">
@@ -119,6 +119,10 @@ export default {
     img: {
       type: String,
       default: null,
+    },
+    zIndex: {
+      type: Number,
+      default: 1,
     },
   },
   data() {
